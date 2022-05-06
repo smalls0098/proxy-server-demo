@@ -1,6 +1,7 @@
 cd /root
 process=`ps aux | grep "proxy_server" | grep -v grep | awk '{print $2}'`
 if [ "$process" != "" ]; then
+  echo "${process}"
   kill -9 "${process}"
 fi
 if [ ! -f "/root/proxy_server" ]; then
